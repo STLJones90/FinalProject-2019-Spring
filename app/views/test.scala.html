@@ -1,0 +1,17 @@
+@(testText : String)
+@doctype.render
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Test</title>
+    </head>
+    <body>
+        <h1>Test Page</h1>
+        <p>@testText</p>
+        <form method="post">
+            @helper.CSRF.formField
+            <input type="text" name="test" id="test">
+            <input type="submit" value="Post">
+        </form>
+    </body>
+</html>
