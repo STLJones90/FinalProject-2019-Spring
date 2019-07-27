@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+@helper.CSRF.formField
+<form method="post" action="@routes.HomeController.postAddHomes">
+    @helper.CSRF.formField
+<input type="submit" value="Submit">
+    <a href="" class="button" type="submit"></a>
+</form>
+</body>
+</html>

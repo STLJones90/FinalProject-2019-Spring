@@ -1,0 +1,29 @@
+@(amenities : List[Amenity])
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+@for(amenity <- amenities){
+
+@amenity.getAmenityName
+<br>
+<br>
+@amenity.getAmenityAddress
+<br>
+@amenity.getAmenityCity
+<br>
+@amenity.getAmenityZipCode
+<br>
+@amenity.getAmenityLatitude
+<br>
+@amenity.getAmenityLongitude
+<br>
+@amenity.getIndustry
+<br>
+<br>
+}
+</body>
+</html>

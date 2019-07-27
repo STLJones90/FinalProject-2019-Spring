@@ -40,7 +40,7 @@
 
 # Scala version (default: latest release)
 #
-#-scala-home <path>        
+#-scala-home <path>
 #-scala-version <version>
 
 # java version (default: java from PATH, currently $(java -version |& grep version))

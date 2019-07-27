@@ -1,0 +1,72 @@
+@(homeFeature : HomeFeature, saleHistories : List[SaleHistory])
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/Home.css">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>
+            Home Square Feet:
+        </th>
+        <th>
+            Lot Square Feet:
+        </th>
+        <th>
+            # of Bedrooms:
+        </th>
+        <th>
+            # of Bathrooms:
+        </th>
+        <th>
+            # of Floors:
+        </th>
+        <th>
+            Year Built:
+        </th>
+        @for(saleHistory <- saleHistories){
+        <th>
+            Date of Sale:
+        </th>
+        <th>
+            Sell Price:
+        </th>
+        }
+    </tr>
+    <tr>
+        <td>
+            @homeFeature.getHouseSqrFeet
+        </td>
+        <td>
+            @homeFeature.getLotSqrFeet
+        </td>
+        <td>
+            @homeFeature.getNumBedrooms
+        </td>
+        <td>
+            @homeFeature.getNumBathrooms
+        </td>
+        <td>
+            @homeFeature.getNumFloors
+        </td>
+        <td>
+            @homeFeature.getYearBuilt
+        </td>
+        @for(saleHistory <- saleHistories){
+        <td>
+           @saleHistory.getDateOfSale
+        </td>
+        <td>
+            @saleHistory.getPastSellPrice
+        </td>
+        <td>
+            @saleHistory.getPricePerSqrFoot
+        </td>
+        }
+    </tr>
+</table>
+</body>
+</html>

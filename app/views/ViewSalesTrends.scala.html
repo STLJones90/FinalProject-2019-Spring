@@ -1,0 +1,23 @@
+@(salesTrends : List[SalesTrend])
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+@for(salesTrend <- salesTrends){
+<br>
+@salesTrend.getMonth
+@salesTrend.getQuarter
+@salesTrend.getStartDateRange
+<br>
+Average Home Price:
+$@salesTrend.getAverageSalePrice
+<br>
+Number of Homes Sold:
+@salesTrend.getHomeCount
+<br>
+}
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/menu.css">
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+<ul class="top-level-menu" id="fade">
+    <li>
+        <a href="#">Explore Homes</a>
+        <ul class="second-level-menu">
+            <li>
+                <form method="post" action="@routes.HomeController.postViewHomeDetails">
+                    @helper.CSRF.formField
+                    <div class="Address">Street</div>
+                    <input type="text" name="street" id="street" class="pad">
+                    <br>
+                    <div class="Address">City</div>
+                    <input type="text" name="city" id="City" class="pad">
+                    <br>
+                    <div class="Address">State</div>
+                    <input type="text" name="state" id="State" class="pad">
+                    <br>
+                    <input type="submit" value="Go!" class="button">
+                </form>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">Explore an Area</a>
+        <ul class="second-level-menu">
+            <li>
+                <form method="post" action="@routes.HomeController.postViewAreaAmenities">
+                    @helper.CSRF.formField
+                    <div class="Address">Zip Code</div>
+                    <input type="text" name="zipCode" class="pad">
+                    <div class="Address">Radius(mi)</div>
+                    <input type="text" name="radius" class="pad">
+                    <ul class="scrollable-menu">
+                        <li><input type="submit" name="type" value="SHOPPING" class="button"></li>
+                        <li><input type="submit" name="type" value="TRAVEL" class="button"></li>
+                        <li><input type="submit" name="type" value="AUTOMOTIVE SERVICES" class="button"></li>
+                        <li><input type="submit" name="type" value="BANKS - FINANCIAL" class="button"></li>
+                        <li><input type="submit" name="type" value="EATING - DRINKING" class="button"></li>
+                        <li><input type="submit" name="type" value="EDUCATION" class="button"></li>
+                        <li><input type="submit" name="type" value="GOVERNMENT - PUBLIC" class="button"></li>
+                        <li><input type="submit" name="type" value="HEALTH CARE SERVICES" class="button"></li>
+                        <li><input type="submit" name="type" value="HOSPITALITY" class="button"></li>
+                        <li><input type="submit" name="type" value="PERSONAL SERVICES" class="button"></li>
+                        <li><input type="submit" name="type" value="SHOPPING" class="button"></li>
+                        <li><input type="submit" name="type" value="TRAVEL" class="button"></li>
+                    </ul>
+                </form>
+        </ul>
+    </li>
+    <li>
+        <a href="#">View Local Sales Trends</a>
+        <ul class="second-level-menu">
+            <li>
+                <form method="post" action="@routes.HomeController.postSaleTrends">
+                    @helper.CSRF.formField
+                    <div class="Address">Zip Code</div>
+                    <input type="text" name="zipCode" class="pad2">
+                    <div class="Address">Start Year</div>
+                    <input type="text" name="startYear" class="pad2">
+                    <div class="Address">End Year</div>
+                    <input type="text" name="endYear" class="pad2">
+                    <div class="Address">Data Interval</div>
+                    <input type="submit" name="interval" value="Monthly" class="button" id="NoOpacity">
+                    <input type="submit" name="interval" value="Quarterly" class="button" id="NoOpacity">
+                </form>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">Test</a>
+        <ul class="second-level-menu">
+            <li><a href="#">Test</a></li>
+            <li><a href="#">Test</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">Test</a>
+        <ul class="second-level-menu">
+            <li>
+                <a href="#">Test</a>
+                <ul class="third-level-menu">
+                    <li><a href="#">TestTestTest</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Test</a></li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>

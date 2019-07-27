@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="@routes.HomeController.postViewHomeDetails">
+    @helper.CSRF.formField
+    <label for="street">Street</label>
+    <br>
+    <input type="text" name="street" id="street" class="">
+    <br>
+    <br>
+    @helper.CSRF.formField
+    <label for="city">City</label>
+    <br>
+    <input type="text" name="city" id="city" class="">
+    <br>
+    <br>
+    @helper.CSRF.formField
+    <label for="state">State</label>
+    <br>
+    <input type="text" name="state" id="state" class="">
+    <br>
+    <input type="submit" value="Save" class="">
+    </form>
+</body>
+</html>

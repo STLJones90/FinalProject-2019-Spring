@@ -1,0 +1,285 @@
+body
+{
+background-image: url("../images/HouseMenuBackground.jpg");
+}
+
+/*
+max-height is the height of the scroll bar
+*/
+.scrollable-menu
+ {
+    height: auto;
+    max-height: 150px;
+    overflow-x: hidden;
+}
+
+.Address
+{
+color: #FFFFFF;
+}
+
+
+.Address2
+{
+color: #FFFFFF;
+font-size: 15px;
+}
+
+#NoOpacity
+{
+opacity: 1.0;
+}
+
+
+/*
+this is the space between zip code and radius on Explore Homes
+*/
+.pad
+{
+margin-top: 20px;
+margin-bottom: 20px;
+}
+
+
+/*
+this is the space between the elements on View Area Sales Trends
+*/
+.pad2
+{
+margin-top: 5px;
+margin-bottom: 5px;
+}
+
+
+
+
+/*
+.sidenav {
+margin-top: 100px;
+  height: 50%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  background-color: #302337;
+  overflow-x: hidden;
+  vertical-align: top;
+}
+
+
+.sidenav a {
+  padding: 50px 8px 8px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #FFFFFF;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #280B0B;
+}
+
+.main {
+  margin-left: 160px;  //Same as the width of the sidenav
+  font-size: 28px;  //Increased text to enable scrolling
+  padding: 0px 10px;
+}
+*/
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+@media screen (min-width: 768px) and (max-width:1200){
+   .nav>li>a {
+    padding: 36px 5px;
+  }
+}
+
+
+.third-level-menu
+{
+    position: absolute;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+.third-level-menu > li
+{
+    height: 60px;
+    background: #000000;
+
+}
+.third-level-menu > li:hover { background: #; }
+
+.second-level-menu
+{
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 300px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+/* THE HEIGHT CONTROLS HOW LONG THE DROPDOWN BAR IS*/
+.second-level-menu > li
+{
+    position: relative;
+    height: 345px;
+    background: #000000;
+
+}
+.second-level-menu > li:hover { background: #; }
+
+.top-level-menu
+{
+ display:flex;
+    list-style: none;
+    padding: 0;
+    opacity: .9;
+}
+
+
+.top-level-menu > li
+{
+ display:flex;
+    position: relative;
+    float: left;
+    height: 60px;
+    width: 300px;
+    background: #000000;
+    opacity: .7;
+}
+.top-level-menu > li:hover {
+background: #000000;
+ }
+
+.top-level-menu li:hover > ul
+{
+    /* On hover, display the next level's menu */
+    display: inline;
+}
+
+
+/* Menu Link Styles */
+
+.top-level-menu a /* Apply to all links inside the multi-level menu */
+{
+    font: bold 14px Arial, Helvetica, sans-serif;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 0 0 0 20px;
+
+    /* Make the link cover the entire list item-container */
+     display:flex;
+    line-height: 60px;
+}
+.top-level-menu a:hover { color: #25F347; }
+
+
+body {
+    text-align: center;
+}
+
+.button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  outline: 0;
+  -webkit-appearance: none;
+}
+
+/* Custom */
+.button {
+margin-top: 5px;
+margin-bottom: 5px;
+  display: inline-block;
+  position: relative;
+  padding: 8px 20px;
+  top: 10px;
+  font-size: 15px;
+  font-family: "Open Sans", Helvetica;
+  border-radius: 4px;
+  border-bottom: 1px solid rgba( 28, 227, 125, 0.5 );
+  background: rgba( 37, 243, 71, 1 );
+  color: #fff;
+  box-shadow: 0px 0px 0px rgba( 15, 165, 60, 0.1 );
+
+  -webkit-transform: translateZ(0);
+     -moz-transform: translateZ(0);
+      -ms-transform: translateZ(0);
+          transform: translateZ(0);
+
+  -webkit-transition: all 0.2s ease;
+     -moz-transition: all 0.2s ease;
+      -ms-transition: all 0.2s ease;
+          transition: all 0.2s ease;
+}
+
+/*
+.button:hover {
+  top: -10px;
+  box-shadow: 0px 10px 10px rgba( 15, 165, 60, 0.2 );
+
+  -webkit-transform: rotateX(20deg);
+     -moz-transform: rotateX(20deg);
+      -ms-transform: rotateX(20deg);
+          transform: rotateX(20deg);
+}
+*/
+
+.button:active {
+  top: 0px;
+  box-shadow: 0px 0px 0px rgba( 15, 165, 60, 0.0 );
+  background: rgba( 20, 224, 133, 1 );
+}
+
+
+
+/*
+.button {
+    display: inline-block;
+    margin: 10px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow:    0 8px 0 #c5376d, 0 15px 20px rgba(0, 0, 0, .35);
+    -moz-box-shadow: 0 8px 0 #c5376d, 0 15px 20px rgba(0, 0, 0, .35);
+    box-shadow: 0 8px 0 #c5376d, 0 15px 20px rgba(0, 0, 0, .35);
+    -webkit-transition: -webkit-box-shadow .1s ease-in-out;
+    -moz-transition: -moz-box-shadow .1s ease-in-out;
+    -o-transition: -o-box-shadow .1s ease-in-out;
+    transition: box-shadow .1s ease-in-out;
+    font-size: 50px;
+    color: #fff;
+}
+*/
+
+/*Fade Code*/
+
+#fade
+{
+    font-size: 21px;
+    text-align: center;
+    -moz-animation: fadein 1
+    s;
+    }
+    @keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: .7; }
+    }
+    @-moz-keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: .7; }
+    }

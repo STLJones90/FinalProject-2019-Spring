@@ -1,0 +1,28 @@
+@(labelText : String, dataPoints : String)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/lib/chart.js/dist/Chart.min.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript" src="/assets/lib/chart.js/dist/Chart.min.js"></script>
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <h1>Chart Demo 2</h1>
+            <canvas id="myChart" width="200" height="200"></canvas>
+            <script type="text/javascript" id="chartscript"
+                    src="/assets/javascripts/chartdemo2.js"
+                    data-label-text="@labelText"
+                    data-points="@dataPoints">
+            </script>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+</body>
+</html>
