@@ -141,35 +141,6 @@ margin-top: 100px;
 }
 .second-level-menu > li:hover { background: #; }
 
-.top-level-menu
-{
- display:flex;
-    list-style: none;
-    padding: 0;
-    opacity: .9;
-}
-
-
-.top-level-menu > li
-{
- display:flex;
-    position: relative;
-    float: left;
-    height: 60px;
-    width: 300px;
-    background: #000000;
-    opacity: .7;
-}
-.top-level-menu > li:hover {
-background: #000000;
- }
-
-.top-level-menu li:hover > ul
-{
-    /* On hover, display the next level's menu */
-    display: inline;
-}
-
 
 /* Menu Link Styles */
 
