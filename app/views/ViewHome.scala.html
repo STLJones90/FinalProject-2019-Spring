@@ -1,72 +1,102 @@
-@(homeFeature : HomeFeature, saleHistories : List[SaleHistory])
+@(homeFeature : HomeFeature, saleHistories : List[SaleHistory],
+houseSqrFeet : String, lotSqrFeet : String, latitude : String, longitude : String,
+homePicture : String)
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="/assets/lib/leaflet/dist/leaflet.css">
+    <script src="/assets/lib/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="/assets/lib/chart.js/dist/Chart.min.css">
     <link rel="stylesheet" type="text/css" href="/assets/stylesheets/Home.css">
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/menu.css">
+    <script id="streetmapjs" type="text/javascript" src="/assets/javascripts/streetviewPano.js"></script>
     <meta charset="UTF-8">
     <title></title>
 </head>
 <body>
-<table>
-    <tr>
-        <th>
-            Home Square Feet:
-        </th>
-        <th>
-            Lot Square Feet:
-        </th>
-        <th>
-            # of Bedrooms:
-        </th>
-        <th>
-            # of Bathrooms:
-        </th>
-        <th>
-            # of Floors:
-        </th>
-        <th>
-            Year Built:
-        </th>
-        @for(saleHistory <- saleHistories){
-        <th>
-            Date of Sale:
-        </th>
-        <th>
-            Sell Price:
-        </th>
-        }
-    </tr>
-    <tr>
-        <td>
-            @homeFeature.getHouseSqrFeet
-        </td>
-        <td>
-            @homeFeature.getLotSqrFeet
-        </td>
-        <td>
-            @homeFeature.getNumBedrooms
-        </td>
-        <td>
-            @homeFeature.getNumBathrooms
-        </td>
-        <td>
-            @homeFeature.getNumFloors
-        </td>
-        <td>
-            @homeFeature.getYearBuilt
-        </td>
-        @for(saleHistory <- saleHistories){
-        <td>
-           @saleHistory.getDateOfSale
-        </td>
-        <td>
-            @saleHistory.getPastSellPrice
-        </td>
-        <td>
-            @saleHistory.getPricePerSqrFoot
-        </td>
-        }
-    </tr>
-</table>
+<div class="float">
+    @NavBar.render
+</div>
+
+
+<div id="house1Container">
+    <img src="assets/images/house1.jpg">
+    <p class="font">@homeFeature.getNumBedrooms Bedrooms</p>
+    <p class="font">@homeFeature.getNumBathrooms Bathrooms</p>
+    <p class="font">@homeFeature.getNumFloors floor(s)</p>
+</div>
+
+<div id="house2Container">
+    <img src="assets/images/house2.jpg">
+    <p class="font">@homeFeature.getFullAddress</p>
+    <p class="font">Built In @homeFeature.getYearBuilt</p>
+</div>
+
+<div id="house3Container">
+    <img src="assets/images/house3.jpg">
+    <p class="font">@homeFeature.getHouseSqrFeet Square Feet</p>
+    <p class="font"> On A</p>
+    <p class="font">@homeFeature.getLotSqrFeet Foot Lot</p>
+</div>
+
+
+<div id="mapContainer">
+    <div id="mapid" style="width: 800px; height: 500px;"></div>
+    <script id="map" type="text/javascript" src="/assets/javascripts/homeMap.js"
+            data-lat="@latitude"
+            data-long="@longitude"
+            data-home-pic="@homePicture">
+    </script>
+</div>
+
+
+
+<div id="streetViewContainer">
+    <div id="pano" class="streetViewDimensions"
+         data-lat="@latitude"
+         data-long="@longitude">
+    </div>
+</div>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2ePWXCVK00oXrZwA9yqPOQqF6o6eXlss&callback=initMap">
+</script>
+
+
+
+
+<div id="chartContainer">
+    <script type="text/javascript" src="/assets/lib/chart.js/dist/Chart.min.js"></script>
+    <h4 id="pad2"></h4>
+    <canvas id="mySqrFeetChart" width="4" height="1"></canvas>
+    <script type="text/javascript" id="chartscript"
+            src="/assets/javascripts/SqrFeetChart.js"
+            data-label-text=""
+            data-points-home-sqrft="@houseSqrFeet"
+            data-points-lot-sqrft="@lotSqrFeet"
+    >
+    </script>
+</div>
+
+
+
+<div id="tableContainer">
+    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+        <table class="table table-bordered table-striped mb-0">
+            <tr>
+                <th>Date of Sale:</th>
+                <th>Sell Price:</th>
+                <th>Price/SqFt:</th>
+            </tr>
+            @for(saleHistory <- saleHistories){
+            <tr>
+                <td>@saleHistory.getDateOfSale</td>
+                <td>@saleHistory.getPastSellPrice</td>
+                <td>@saleHistory.getPricePerSqrFoot</td>
+            </tr>
+            }
+        </table>
+    </div>
+</div>
+<div id="streetmap" class="mapDimensions"></div>
 </body>
 </html>

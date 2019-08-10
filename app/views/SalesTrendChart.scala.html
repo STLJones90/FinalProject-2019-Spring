@@ -1,27 +1,77 @@
-@(labelText : String, dataPoints : String)
+@(averageSaleDataPoint : String, medSaleDataPoint : String, homesSoldDataPoint : String, yearLabels : String,
+intervalLabels : String, salesTrends : List[SalesTrend], startYear : Integer, endYear : Integer, zipCode : Integer)
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/lib/chart.js/dist/Chart.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/SaleTrendChart.css">
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/table.css">
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/menu.css">
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheets/homePic.css">
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+<div class="float">
+@NavBar.render
+</div>
+
+
+<div class="chartContainer">
 <script type="text/javascript" src="/assets/lib/chart.js/dist/Chart.min.js"></script>
-<div class="container">
-    <div class="row">
-        <div class="col-4"></div>
-        <div class="col-4">
-            <h1>Chart Demo 2</h1>
-            <canvas id="myChart" width="200" height="200"></canvas>
-            <script type="text/javascript" id="chartscript"
-                    src="/assets/javascripts/chartdemo2.js"
-                    data-label-text="@labelText"
-                    data-points="@dataPoints">
-            </script>
-        </div>
-        <div class="col-4"></div>
+<h4 id="pad2">Average/Median Home Prices Between @startYear and @endYear For Zip Code @zipCode</h4>
+<canvas id="myAvgPriceChart" width="4" height="1"></canvas>
+<script type="text/javascript" id="chartscript"
+        src="/assets/javascripts/chartdemo2.js"
+        data-label-text=""
+        avg-price-data-points="@averageSaleDataPoint"
+        med-price-data-points="@medSaleDataPoint"
+        avg-homes-data-points="@homesSoldDataPoint"
+        data-label-year="@yearLabels"
+        data-label-interval="@intervalLabels"
+>
+</script>
+</div>
+
+<div class="chartContainer">
+<h4>Average Homes Sold Between @startYear and @endYear For Zip Code @zipCode</h4>
+<canvas id="myHomeChart" width="4" height="1"></canvas>
+<script type="text/javascript" id="chartscript"
+        src="/assets/javascripts/chartdemo2.js"
+        data-label-text=""
+        avg-price-data-points="@averageSaleDataPoint"
+        med-price-data-points="@medSaleDataPoint"
+        avg-homes-data-points="@homesSoldDataPoint"
+        data-label-year="@yearLabels"
+        data-label-interval="@intervalLabels"
+>
+</script>
+
+</div>
+
+<div id="customers">
+    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+        <table class="table table-bordered table-striped mb-0">
+            <thead>
+            <tr>
+                <th>Period</th>
+                <th>Average Home Price</th>
+                <th>Median Home Price</th>
+                <th>Number of Homes Sold</th>
+            </tr>
+            </thead>
+            <tbody>
+            @for(salesTrend <- salesTrends) {
+            <tr>
+                <td>@salesTrend.getInterval @salesTrend.getStartDateRange</td>
+                <td>$@salesTrend.getAverageSalePrice</td>
+                <td>$@salesTrend.getMedSalePrice</td>
+                <td>@salesTrend.getHomeCount</td>
+            </tr>
+            }
+            </tbody>
+        </table>
     </div>
 </div>
 </body>

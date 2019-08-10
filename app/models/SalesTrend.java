@@ -8,27 +8,27 @@ public class SalesTrend
     private String endDateRange;
     private int homeCount;
     private int averageSalePrice;
-    private String month;
-    private String quarter;
+    private int medSalePrice;
+    private String interval;
 
-    public String getMonth()
+    public int getMedSalePrice()
     {
-        return month;
+        return medSalePrice;
     }
 
-    public void setMonth(String month)
+    public void setMedSalePrice(int medSalePrice)
     {
-        this.month = month;
+        this.medSalePrice = medSalePrice;
     }
 
-    public String getQuarter()
+    public String getInterval()
     {
-        return quarter;
+        return interval;
     }
 
-    public void setQuarter(String quarter)
+    public void setInterval(String interval)
     {
-        this.quarter = quarter;
+        this.interval = interval;
     }
 
     public String getStartDateRange()

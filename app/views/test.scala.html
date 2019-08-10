@@ -1,17 +1,19 @@
 @(testText : String)
 @doctype.render
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Test</title>
-    </head>
-    <body>
-        <h1>Test Page</h1>
-        <p>@testText</p>
-        <form method="post">
-            @helper.CSRF.formField
-            <input type="text" name="test" id="test">
-            <input type="submit" value="Post">
-        </form>
-    </body>
+<link rel="stylesheet" href="/assets/lib/chart.js/dist/Chart.min.css">
+<link rel="stylesheet" type="text/css" href="/assets/stylesheets/test.css">
+<meta charset="UTF-8">
+<title></title>
+<body>
+
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+</div>
+
+</body>
 </html>

@@ -11,6 +11,7 @@ crossScalaVersions := Seq("2.11.12", "2.12.4")
 libraryDependencies += guice
 
 //WebServices
+libraryDependencies += "com.fasterxml.jackson.dataformat" % "jackson-dataformat-xml" % "2.9.8"
 libraryDependencies ++= Seq(
   javaWs
 )
@@ -27,6 +28,9 @@ libraryDependencies += "org.mariadb.jdbc" % "mariadb-java-client" % "2.4.0"
 // Testing libraries for dealing with CompletionStage...
 libraryDependencies += "org.assertj" % "assertj-core" % "3.6.2" % Test
 libraryDependencies += "org.awaitility" % "awaitility" % "2.0.0" % Test
+
+//maps
+libraryDependencies += "org.webjars.bower" % "leaflet" % "1.4.0"
 
 // Make verbose tests
 testOptions in Test := Seq(Tests.Argument(TestFrameworks.JUnit, "-a", "-v"))

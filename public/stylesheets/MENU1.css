@@ -1,10 +1,13 @@
+body
+{
+background-image: url("../images/HouseMenuBackground.jpg");
+}
 
 /*
 max-height is the height of the scroll bar
 */
-
 .scrollable-menu
-{
+ {
     height: auto;
     max-height: 150px;
     overflow-x: hidden;
@@ -12,18 +15,19 @@ max-height is the height of the scroll bar
 
 .Address
 {
-    color: #FFFFFF;
+color: #FFFFFF;
 }
+
 
 .Address2
 {
-    color: #FFFFFF;
-    font-size: 15px;
+color: #FFFFFF;
+font-size: 15px;
 }
 
 #NoOpacity
 {
-    opacity: 1.0;
+opacity: 1.0;
 }
 
 
@@ -32,8 +36,8 @@ this is the space between zip code and radius on Explore Homes
 */
 .pad
 {
-    margin-top: 20px;
-    margin-bottom: 20px;
+margin-top: 20px;
+margin-bottom: 20px;
 }
 
 
@@ -42,8 +46,8 @@ this is the space between the elements on View Area Sales Trends
 */
 .pad2
 {
-    margin-top: 5px;
-    margin-bottom: 5px;
+margin-top: 5px;
+margin-bottom: 5px;
 }
 
 
@@ -83,18 +87,15 @@ margin-top: 100px;
 */
 
 
-@media screen and (max-height: 450px)
-{
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
 
-@media screen (min-width: 768px) and (max-width:1200)
-{
-    .nav>li>a
-    {
+@media screen (min-width: 768px) and (max-width:1200){
+   .nav>li>a {
     padding: 36px 5px;
-    }
+  }
 }
 
 
@@ -120,7 +121,6 @@ margin-top: 100px;
 
 .second-level-menu
 {
-    z-index: 2;
     position: absolute;
     top: 60px;
     left: 0;
@@ -137,40 +137,32 @@ margin-top: 100px;
     position: relative;
     height: 345px;
     background: #000000;
-    z-index:2;
 
 }
 .second-level-menu > li:hover { background: #; }
 
 .top-level-menu
 {
-    margin-left:300px;
  display:flex;
     list-style: none;
     padding: 0;
-    opacity: .95;
-    position: relative;
-    z-index: 2;
-
+    opacity: .9;
 }
 
 
 .top-level-menu > li
 {
-    display:flex;
+ display:flex;
     position: relative;
     float: left;
     height: 60px;
     width: 300px;
     background: #000000;
-    opacity: .95;
-    z-index: 2;
-
+    opacity: .7;
 }
-.top-level-menu > li:hover
-{
-    background: #000000;
-}
+.top-level-menu > li:hover {
+background: #000000;
+ }
 
 .top-level-menu li:hover > ul
 {
@@ -191,21 +183,15 @@ margin-top: 100px;
     /* Make the link cover the entire list item-container */
      display:flex;
     line-height: 60px;
-    position:relative;
-    z-index: 2;
-
 }
-
 .top-level-menu a:hover { color: #25F347; }
 
 
-body
-{
+body {
     text-align: center;
 }
 
-.button
-{
+.button {
   background: transparent;
   border: 0;
   padding: 0;
@@ -215,10 +201,9 @@ body
 }
 
 /* Custom */
-.button
-{
-  margin-top: 5px;
-  margin-bottom: 5px;
+.button {
+margin-top: 5px;
+margin-bottom: 5px;
   display: inline-block;
   position: relative;
   padding: 8px 20px;
@@ -289,16 +274,12 @@ body
     text-align: center;
     -moz-animation: fadein 1
     s;
-}
-
-@keyframes fadein
-{
-    from { opacity: 0; }
-    to   { opacity: .7; }
-}
-
-@-moz-keyframes fadein
-{
-    from { opacity: 0; }
-    to   { opacity: .7; }
-}
+    }
+    @keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: .7; }
+    }
+    @-moz-keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: .7; }
+    }

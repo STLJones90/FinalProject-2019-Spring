@@ -1,4 +1,5 @@
-@(salesTrends : List[SalesTrend])
+@(averageSaleDataPoint : String, homesSoldDataPoint : String, yearLabels : String,
+monthLabels : String, quarterLabels : String, salesTrends : List[SalesTrend])
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +9,7 @@
 <body>
 @for(salesTrend <- salesTrends){
 <br>
-@salesTrend.getMonth
-@salesTrend.getQuarter
+@salesTrend.getInterval
 @salesTrend.getStartDateRange
 <br>
 Average Home Price:

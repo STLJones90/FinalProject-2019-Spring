@@ -1,0 +1,26 @@
+body
+{
+background-image: url("../images/viewHomeBackground.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 1;
+}
+
+.chartContainer
+{
+background-color:grey;
+padding-top:10px;
+padding-bottom:85px;
+margin-bottom:20px;
+opacity: .95;
+color: white;
+text-align: center;
+font-size: 22px;
+position: relative;
+z-index:-1;
+}
+
+
+
+

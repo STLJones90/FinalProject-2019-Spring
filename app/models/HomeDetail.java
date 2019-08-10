@@ -13,8 +13,8 @@ public class HomeDetail
     private String address;
     private String state;
     private String zipCode;
-    private double latitude = 2.6;
-    private double longitude = 2.6;
+    private double latitude = 3.6;
+    private double longitude = 3.6;
     private int houseSqrFeet;
     private int lotSqrFeet;
     private int numBedrooms;

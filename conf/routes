@@ -6,13 +6,11 @@
 GET     /                           controllers.TestController.getTest
 POST    /                           controllers.TestController.postTest
 
-GET     /test                       controllers.TestController.getTest
+GET     /test                       controllers.TestController.getZillow
 POST    /test                       controllers.TestController.postTest
 
 GET     /testdb                     controllers.TestController.getTestDb
 POST    /testdb                     controllers.TestController.postTestDb
-
-GET     /chartdemo2                 controllers.ChartController.getDemo2
 
 GET     /setaddress                 controllers.SetAddressController.getSetAddress
 POST    /setaddress                 controllers.HomeController.postViewHomeDetails

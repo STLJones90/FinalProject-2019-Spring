@@ -1,11 +1,204 @@
-table {
+body
+{
+background-image: url("../images/viewHomeBackground.jpg");
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+
+
+
+.font
+{
+color: white;
+text-align: center;
+font-style: italic;
+font-size: 20px;
+}
+
+
+
+
+#house1Container
+{
+opacity: .9;
+border-radius: 50px;
+margin-left: -25px;
+display: inline-block;
+padding-bottom: 0px;
+background-color: #1F3A2F;
+color: white;
+text-align: center;
+position: relative;
+z-index: -1;
+}
+
+#house1Container img
+{
+border-radius: 10%;
+}
+
+
+
+#house2Container
+{
+opacity: .9;
+border-radius: 50px;
+margin-left: 30px;
+display: inline-block;
+padding-bottom: 0px;
+background-color: #1F3A2F;
+position: relative;
+z-index: -1;
+}
+
+#house2Container img
+{
+border-radius: 10%;
+}
+
+
+
+#house3Container
+{
+opacity: .95;
+border-radius: 50px;
+margin-top: 20px;
+margin-left: 30px;
+display: inline-block;
+padding-bottom: 0px;
+background-color: #1F3A2F;
+position: relative;
+z-index: -1;
+}
+
+#house3Container img
+{
+border-radius: 10%;
+}
+
+
+#chartContainer
+{
+opacity: .99;
+border-radius: 5%;
+display: block;
+background-color: #1F3A2F;
+opacity: .8;
+margin-top: 25px;
+margin-left: 25px;
+padding-right: 25px;
+padding-left: 25px;
+padding-top: 25px;
+padding-bottom: 75px;
+}
+
+#mapContainer
+{
+opacity: .95;
+display: inline-block;
+background-color: #1F3A2F;
+margin-left: 0px;
+margin-top: 50px;
+margin-bottom: 50px;
+padding-right: 25px;
+padding-left: 25px;
+padding-top: 25px;
+padding-bottom: 25px;
+}
+
+#streetViewContainer
+{
+opacity: .95;
+display: inline-block;
+background-color: #1F3A2F;
+margin-top: 50px;
+margin-bottom: 50px;
+padding-right: 25px;
+padding-left: 25px;
+padding-top: 25px;
+padding-bottom: 25px;
+}
+
+.streetViewDimensions
+{
+height: 500px;
+width: 550px;
+}
+
+.mapDimensions
+{
+height: 0px;
+width: 0px;
+}
+
+#tableContainer
+{
+margin-top:-400px;
+margin-left: 750px;
+}
+
+
+
+
+
+table
+{
+opacity: .85;
   border-collapse: collapse;
   width: 100%;
+  margin-bottom: 100px;
 }
+
 
 th, td {
+font-size: 25px;
+color: white;
+  text-align: center;
   padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
 }
 
+tr:nth-child(even){background-color: #1F3A2F}
+
+table thead tr
+{
+    display:block;
+}
+
+table th,table td
+{
+padding-top: 25px;
+padding-bottom: 25px;
+    width:200px;//fixed width
+}
+
+
+table  tbody
+{
+border-radius: 10%;
+background-color: #25F347;
+display: inline-block;
+height:auto;
+overflow:auto;//set tbody to auto
+}
+
+th
+{
+  background-color: #25F347;
+  color: white;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+
+
+.table-wrapper-scroll-y
+{
+display: block;
+}
+
+
+.float
+{
+position: relative;
+z-index: 1;
+}
