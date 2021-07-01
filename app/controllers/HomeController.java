@@ -51,6 +51,7 @@ public class HomeController extends Controller
     }
 
 
+/*
     private JsonNode getZillowHomeFeatures(String zillowStreet, String zillowCity, String zillowState) throws Exception
     {
         URL saleHistoryUrl = new URL("http://www.zillow.com/webservice/GetDeepSearchResults.htm?" +
@@ -71,7 +72,7 @@ public class HomeController extends Controller
         return objectMapper.readTree(content.toString());
 
     }
-
+*/
 
     private JsonNode getAreaSalesTrend(int zipCode, String interval, int startYear, int endYear) throws Exception
     {
@@ -335,8 +336,7 @@ public class HomeController extends Controller
                     {
                         String noPhoto = "https://www.hopkinsmedicine.org/-/media/feature/noimageavailable.ashx";
                         businessPhotos.add(noPhoto);
-                    }
-                    catch (NoSuchElementException e)
+                    } catch (NoSuchElementException e)
                     {
                         String noPhoto = "https://www.hopkinsmedicine.org/-/media/feature/noimageavailable.ashx";
                         businessPhotos.add(noPhoto);
@@ -493,8 +493,10 @@ public class HomeController extends Controller
                     switch (monthCount)
                     {
                         case 1:
-                        { salesTrend.setInterval(january);
-                            break; }
+                        {
+                            salesTrend.setInterval(january);
+                            break;
+                        }
                         case 2:
                         {
                             salesTrend.setInterval(february);
@@ -592,8 +594,7 @@ public class HomeController extends Controller
             return ok(views.html.SalesTrendChart.render(averageSaleDataPoint, medSaleDataPoint, homesSoldDataPoint,
                     yearLabels, intervalLabels, salesTrends, startYear, endYear, zipCode));
 
-        }
-        catch (NumberFormatException e)
+        } catch (NumberFormatException e)
         {
             return ok(views.html.ErrorPage.render());
         }
@@ -624,7 +625,6 @@ public class HomeController extends Controller
 
         String state = form.get("state");
         state = state.replace(" ", "%20");
-
 
 
         try
@@ -675,7 +675,7 @@ public class HomeController extends Controller
             Iterator<JsonNode> saleHistoryNodes = propertyNode.get("salehistory").iterator();
 
             //making sure we do not show confusing data
-            if(homeFeature.getNumBedrooms().equals("0"))
+            if (homeFeature.getNumBedrooms().equals("0"))
             {
                 homeFeature.setNumBedrooms("N/A");
             }
@@ -695,9 +695,7 @@ public class HomeController extends Controller
                 try
                 {
                     saleHistory.setDateOfSale(amountNode.get("salerecdate").asText());
-                }
-
-                catch (NullPointerException e)
+                } catch (NullPointerException e)
                 {
                     saleHistory.setDateOfSale("No Data");
                 }
@@ -726,9 +724,9 @@ public class HomeController extends Controller
                 //This loop simply looks for any saleHistory object that has Big Decimal "0" stored as a value
                 //we remove the saleHistory from our list and are program continues to function
                 //There is probably a better way to do this but it works
-                for (int i = 0; i < saleHistories.size() ; i++)
+                for (int i = 0; i < saleHistories.size(); i++)
                 {
-                    if(saleHistory.getPastSellPrice().equals(zero))
+                    if (saleHistory.getPastSellPrice().equals(zero))
                     {
                         saleHistories.remove(saleHistory);
                     }
@@ -757,7 +755,7 @@ public class HomeController extends Controller
                 //In order to get a picture of the home, we have to open a connection to a separate URL and plug
                 //the zpid into that URL
                 URL zillowUrl = new URL("http://www.zillow.com/webservice/GetDeepSearchResults.htm?zws-id="
-                        +apiKey + "&address=" + street + "&citystatezip=" + city + "%2C+" + state);
+                        + apiKey + "&address=" + street + "&citystatezip=" + city + "%2C+" + state);
                 DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
                 DocumentBuilder db = dbf.newDocumentBuilder();
                 Document doc = db.parse(zillowUrl.openStream());
@@ -768,7 +766,7 @@ public class HomeController extends Controller
 
                 //plugging the zpid into the new URL
                 URL zillowIdUrl = new URL("http://www.zillow.com/webservice/GetUpdatedPropertyDetails.htm?" +
-                        "zws-id=" + apiKey+ "&zpid=" + zpId);
+                        "zws-id=" + apiKey + "&zpid=" + zpId);
 
                 DocumentBuilderFactory dbf2 = DocumentBuilderFactory.newInstance();
                 DocumentBuilder db2 = dbf2.newDocumentBuilder();
